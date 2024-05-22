@@ -8,7 +8,7 @@ public class FirstComeFirstServed {
 		this.jobQ = jobQ;
 		time = 0;
 		//파일에서 정보 얻어와 리스트에 추가하기 (plist.add(new ProcessCom(n, m,, ,));
-		/*
+		/*//
 		jobQ.add(new Process(1, 10, 10, 1));
 		jobQ.add(new Process(2, 5, 1, 1));
 		jobQ.add(new Process(3, 20, 5, 1));

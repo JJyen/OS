@@ -31,7 +31,7 @@ public class Main {
 		
 		
 		System.out.print("스케쥴러 선택: ");
-		int sch = scanner.nextInt();
+		int sch = scanner.nextInt(); //
 		
 		switch(sch) {
 		case 1:
