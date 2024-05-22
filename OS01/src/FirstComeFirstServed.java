@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class FirstComeFirstServed {
 	//FCFS 개발 클래스입니다.

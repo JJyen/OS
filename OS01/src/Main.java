@@ -30,27 +30,24 @@ public class Main {
 		Collections.sort(jobQ);
 		
 		
-		while(true) {
-			System.out.print("스케쥴러 선택: ");
-			int sch = scanner.nextInt();
-			if(sch == 0) break;
-			
-			switch(sch) {
-			case 1:
-		        ShortestJobFirst sjf = new ShortestJobFirst(jobQ);
-		        sjf.show();
-		        break;
-			case 2:
-		        Priority priority = new Priority(jobQ);
-		        priority.show();
-		        break;
-			case 3:
-		        //RoundRobin rr = new RoundRobin(jobQ);
-		        break;
-			case 4:
-		        FirstComeFirstServed fcfs = new FirstComeFirstServed(jobQ);
-		        break;
-			}
+		System.out.print("스케쥴러 선택: ");
+		int sch = scanner.nextInt();
+		
+		switch(sch) {
+		case 1:
+	        ShortestJobFirst sjf = new ShortestJobFirst(jobQ);
+	        sjf.show();
+	        break;
+		case 2:
+	        Priority priority = new Priority(jobQ);
+	        priority.show();
+	        break;
+		case 3:
+	        //RoundRobin rr = new RoundRobin(jobQ);
+	        break;
+		case 4:
+	        FirstComeFirstServed fcfs = new FirstComeFirstServed(jobQ);
+	        break;
 		}
 		scanner.close();
 		
