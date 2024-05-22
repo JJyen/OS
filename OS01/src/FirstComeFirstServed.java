@@ -3,20 +3,23 @@ import java.util.Collections;
 
 public class FirstComeFirstServed {
 	//FCFS 개발 클래스입니다.
-	private ArrayList<Process> jobQ = new ArrayList<>(); // jobQ
+	private ArrayList<Process> jobQ; //= new ArrayList<>(); // jobQ
 	private int time;
-	public FirstComeFirstServed() {
+	public FirstComeFirstServed(ArrayList<Process> jobQ) {
+		this.jobQ = jobQ;
 		time = 0;
 		//파일에서 정보 얻어와 리스트에 추가하기 (plist.add(new ProcessCom(n, m,, ,));
+		/*
 		jobQ.add(new Process(1, 10, 10, 1));
 		jobQ.add(new Process(2, 5, 1, 1));
 		jobQ.add(new Process(3, 20, 5, 1));
 		jobQ.add(new Process(4, 2, 2, 1));
+		*/
 		//
 		printp(); // process 정보 출력
-		Collections.sort(jobQ); // 도착시간 기준으로 정렬
+		//Collections.sort(jobQ); // 도착시간 기준으로 정렬
 		for(int i = 0; i < jobQ.size(); i++) { // 정렬된 순서대로 process 실행
-			while(time < jobQ.get(i).getArriveTime()) time++; // process 도착할 때까지 time 증가
+			while(time < jobQ.get(i).getArrivalTime()) time++; // process 도착할 때까지 time 증가
 			jobQ.get(i).setDispatchTime(time);
 			time += jobQ.get(i).getBurstTime();
 			jobQ.get(i).setEndTime(time);
@@ -27,7 +30,7 @@ public class FirstComeFirstServed {
 		System.out.println("[Input]");
 		System.out.printf("| %-13s| %-13s| %-13s|\n", "process ID", "Burst", "arrive");
 		for(Process p: jobQ) {
-			System.out.printf("| %-13d| %-13d| %-13d|\n", p.getProcessNum(), p.getBurstTime(), p.getArriveTime());
+			System.out.printf("| %-13d| %-13d| %-13d|\n", p.getProcessNum(), p.getBurstTime(), p.getArrivalTime());
 		}
 	}
 	public void print() {
