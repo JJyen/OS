@@ -30,7 +30,7 @@ public class FirstComeFirstServed {
 		System.out.println("[Input]");
 		System.out.printf("| %-13s| %-13s| %-13s|\n", "process ID", "Burst", "arrive");
 		for(Process p: jobQ) {
-			System.out.printf("| %-13d| %-13d| %-13d|\n", p.getProcessNum(), p.getBurstTime(), p.getArrivalTime());
+			System.out.printf("| %-13d| %-13d| %-13d|\n", p.getPID(), p.getBurstTime(), p.getArrivalTime());
 		}
 	}
 	public void print() {
@@ -43,7 +43,7 @@ public class FirstComeFirstServed {
 		for(Process p: jobQ) {
 			sumW += p.getWaitingTime();
 			sumR += p.getResponseTime();
-			System.out.printf("| %-13d| %-13d| %-13d| %-13d|\n", p.getProcessNum(), p.getTurnaroundTime(), p.getWaitingTime(), p.getResponseTime());
+			System.out.printf("| %-13d| %-13d| %-13d| %-13d|\n", p.getPID(), p.getTurnaroundTime(), p.getWaitingTime(), p.getResponseTime());
 		}
 		avgW = (double)sumW/jobQ.size();
 		avgR = (double)sumR/jobQ.size();

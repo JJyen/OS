@@ -45,10 +45,10 @@ public class Main {
 		        priority.show();
 		        break;
 			case 3:
-				System.out.println("RR");
+		        //RoundRobin rr = new RoundRobin(jobQ);
 		        break;
 			case 4:
-				System.out.println("FCFS");
+		        FirstComeFirstServed fcfs = new FirstComeFirstServed(jobQ);
 		        break;
 			}
 		}
