@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
 public class Priority {
-    private ArrayList<Process> jobQ;
-    private ArrayList<Process> readyQ;
-    private ArrayList<Process> ended;
+    private ArrayList<PriorityProcess> jobQ;
+    private ArrayList<PriorityProcess> readyQ;
+    private ArrayList<PriorityProcess> ended;
 
-    public Priority(ArrayList<Process> jobQ) {
+    public Priority(ArrayList<PriorityProcess> jobQ) {
         this.jobQ = jobQ;
         this.readyQ = new ArrayList<>();
         this.ended = new ArrayList<>();
@@ -17,7 +17,7 @@ public class Priority {
         
         while (!jobQ.isEmpty()) {
             // jobQueue에서 readyQueue로 프로세스 이동
-            for (Process process : jobQ) {
+            for (PriorityProcess process : jobQ) {
                 if (!ended.isEmpty() || process.getArrivalTime() <= ended.get(ended.size() - 1).getEndTime()) {
                     readyQ.add(process);
                 }
@@ -48,7 +48,7 @@ public class Priority {
 
     public void show() {
         System.out.println("Priority 되라 얍");
-        for (Process process : ended) {
+        for (PriorityProcess process : ended) {
             System.out.println("Process ID: " + process.getPID() + ", Arrival Time: " + process.getArrivalTime() + ", Burst Time: " + process.getBurstTime());
             System.out.println("Dispatch Time: " + process.getDispatchTime()+ ", End Time: " + process.getEndTime());
             System.out.println("Turnaround Time: " + process.getTurnaroundTime()+ ", Waiting Time: " + process.getWaitingTime() + ", Response Time: " + process.getResponseTime());
